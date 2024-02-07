@@ -3,20 +3,21 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: rgb(0, 0, 0);
+  --background-start-rgb: rgb(255, 255, 255);
+  --background-end-rgb: rgb(255, 120, 187);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+} */
 
 body {
+  font-family: 'Urbanist Variable', sans-serif;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -29,5 +30,26 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+.logo-font{
+  font-family: 'Pacifico', sans-serif;
+}
+
+.gradient {
+  background: linear-gradient(90deg, #ffd000, #00f7ff, #ff00e6);
+  background-size: 300% 300%;
+  animation: gradient 10s alternate infinite;
+  /* position: absolute; */
+  height: 50vh;
+  width: 100%;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
   }
 }
